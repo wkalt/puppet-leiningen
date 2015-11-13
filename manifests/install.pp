@@ -8,7 +8,7 @@ class leiningen::install($user, $version="2") {
   }
 
   file { "/home/${user}/bin/lein": 
-    mode => 0755,
+    mode => '0755',
     require => [Exec["download_leiningen"],
                 File["/home/${user}/bin"]]
   }
