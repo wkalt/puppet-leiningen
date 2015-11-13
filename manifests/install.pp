@@ -30,7 +30,7 @@ class leiningen::install($user, $install_path) {
 
   file { "/etc/profile.d/local_bin_in_path.sh":
     ensure  => present,
-    content => "PATH=${PATH}:${install_path}"
+    content => "PATH=\$PATH:${install_path}"
   }
 
 }
