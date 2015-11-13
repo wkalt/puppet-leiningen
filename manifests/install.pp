@@ -1,11 +1,6 @@
-class leiningen::install($user, $install_path, $version="2") {
+class leiningen::install($user, $install_path) {
 
-  if $version == "2" {
-    $executable_url = "https://raw.github.com/technomancy/leiningen/preview/bin/lein"
-  }
-  else {
-    $executable_url = "https://github.com/technomancy/leiningen/raw/stable/bin/lein"
-  }
+  $executable_url = "https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein"
 
   file { "${install_path}/lein":
     mode => '0755',
